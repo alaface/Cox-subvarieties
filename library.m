@@ -119,16 +119,3 @@ IdeCodim2 := function(Z)
  return Basis(&meet[J : J in RadicalDecomposition(I) | r-Dimension(J) eq 2]);
 end function;
 
-
-////////////////////////////////////////////////
-// DegGens
-// INPUT = Toric variety, list of generators
-// OUTPUT = degrees of generators
-////////////////////////////////////////////////
-
-DegGens := function(Z,gens)
- f := WeilToClassGroupsMap(Z);
- E := Domain(f);
- return [f(E!Exponents(Monomials(g)[1])) : g in gens];
-end function;
-
