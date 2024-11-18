@@ -80,7 +80,7 @@ To use this program:
 ## Usage
 
 1. **Load Functions**: Include the code in your workspace or project.
-2. **Initialize Inputs**: Define the ideal \( I \), the list of generators \( lis \), and the grading map \( h \).
+2. **Initialize Inputs**: Define the ideal `I`, the list of generators `lis`, and the grading map `h`.
 3. **Run Functions**: Call the appropriate function to compute the Cox ring iteratively.
 
 Example usage:
