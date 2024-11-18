@@ -58,14 +58,6 @@ This repository provides a collection of functions designed to compute Cox rings
    - **Output**:  
      - Generators of the codimension 2 locus.
 
-6. **DegGens**  
-   - **Description**: Computes the degrees of the generators of a given toric variety.  
-   - **Input**:  
-     - `Z` : Toric variety.  
-     - `gens`: List of generators.  
-   - **Output**:  
-     - Degrees of the generators.
-
 ---
 
 ## Installation
@@ -83,7 +75,7 @@ To use this program:
 2. **Initialize Inputs**: Define the ideal `I`, the list of generators `lis`, and the grading map `h`.
 3. **Run Functions**: Call the appropriate function to compute the Cox ring iteratively.
 
-Example usage:
+Example usage: we compute the Cox ring of a random variety of Example 6.1.
 ```magma
 load "library.m";
 
