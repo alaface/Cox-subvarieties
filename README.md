@@ -11,57 +11,57 @@ This repository provides a collection of functions designed to compute Cox rings
 1. **NewGens**  
    - **Description**: Computes the first non-empty B_n of Algorithm 1, which contributes new generators for the Cox ring.  
    - **Input**:  
-     - `I`: Ideal of a subvariety.  
-     - `lis`: The list m_1,...,m_s.  
-     - `h`: Grading map for the generators of the Cox ring of the ambient variety.  
+     - `$I$`: Ideal of a subvariety.  
+     - `lis`: The list $m_1,\ldots,m_s$.  
+     - `$h$`: Grading map for the generators of the Cox ring of the ambient variety.  
    - **Output**:  
-     - B_n \): First non-empty set contributing new variables to the Cox ring.  
-     - `lis`: Updated list m_1,...,m_s in the new ring, incorporating new variables for elements of B_n.  
-     - `n`: The power adjustment factor for saturation in the algorithm.  
-     - `h`: Updated grading map for the generators of the new ring.  
+     - $B_n$: First non-empty set contributing new variables to the Cox ring.  
+     - `lis`: Updated list $m_1,\ldots,m_s$ in the new ring, incorporating new variables for elements of $B_n$.  
+     - `$n$`: The power adjustment factor for saturation in the algorithm.  
+     - `$h$`: Updated grading map for the generators of the new ring.  
 
 2. **NewRing**  
    - **Description**: Constructs the ideal for a new ring based on input generators and grading.  
    - **Input**:  
-     - `I`: Ideal of the subvariety.  
+     - `$I$`: Ideal of the subvariety.  
      - `ll`: New generators obtained from the `NewGens` function.  
-     - `lis`: List of previous generators m_1,...,m_s.  
-     - `n`: Power adjustment factor used in `NewGens`.  
-     - `h`: Grading map for the generators of the previous ring.  
+     - `lis`: List of previous generators $m_1,\ldots,m_s$.  
+     - `$n$`: Power adjustment factor used in `NewGens`.  
+     - `$h$`: Grading map for the generators of the previous ring.  
    - **Output**:  
      - The ideal of the new ambient ring.  
-     - Updated list of generators m_1,...,m_s.  
+     - Updated list of generators $m_1,\ldots,m_s$.  
      - Updated grading map for the new ring.  
 
 
 3. **IsCox**  
    - **Description**: Checks if the current ideal represents the Cox ring.  
    - **Input**:  
-     - `I`: Ideal of the subvariety.  
-     - `lis`: The list m_1,...,m_s.
+     - `$I$`: Ideal of the subvariety.  
+     - `lis`: The list $m_1,\ldots,m_s$.
    - **Output**:  
      - Boolean indicating if the ideal is a Cox ring.
 
 4. **ComputeCox**  
    - **Description**: Computes the Cox ring of a variety iteratively.  
    - **Input**:  
-     - `I`: Ideal of the subvariety.  
-     - `lis`: The list m_1,...,m_s.  
-     - `h`: Grading map.  
+     - `$I$`: Ideal of the subvariety.  
+     - `lis`: The list $m_1,\ldots,m_s$.  
+     - `$h$`: Grading map.  
    - **Output**:  
      - Minimal generators of the Cox ring and their gradings.
 
 5. **IdeCodim2**  
    - **Description**: Computes the codimension 2 irrelevant locus of a toric variety.  
    - **Input**:  
-     - `Z`: Toric variety.  
+     - `$Z$`: Toric variety.  
    - **Output**:  
      - Generators of the codimension 2 locus.
 
 6. **DegGens**  
    - **Description**: Computes the degrees of the generators of a given toric variety.  
    - **Input**:  
-     - `Z`: Toric variety.  
+     - `$Z$`: Toric variety.  
      - `gens`: List of generators.  
    - **Output**:  
      - Degrees of the generators.
