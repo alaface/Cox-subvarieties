@@ -68,8 +68,11 @@ NewRing := function(I,ll,lis,n,h)
    u[i] := T[j];
   end if;
  end for;
- I1 := Ideal([Evaluate(f,u) : f in Basis(I1)]);
  I2 := Ideal([Evaluate(f,u) : f in Basis(I2)]);
+ if #Basis(I1) eq 0 then 
+  return Ideal(R3!0),MinimalBasis(I2),h;
+ end if;
+ I1 := Ideal([Evaluate(f,u) : f in Basis(I1)]);
  return I1,MinimalBasis(I2),h;
 end function;
 
