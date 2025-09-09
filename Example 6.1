@@ -1,0 +1,37 @@
+//==============================================================
+// Magma code for Example 6.1
+// Blowing up P^4 at two points and analyzing a hypersurface
+//==============================================================
+
+// Define the field of rational functions with six parameters
+// The parameters a1, a2, a3, b1, b2, c1 are the coefficients
+// of the hypersurface equation, depending on T1, T2, T3.
+F<a1,a2,a3,b1,b2,c1> := RationalFunctionField(Rationals(), 6);
+
+// Define a polynomial ring with variables T4, T5, T6, T7
+// These correspond to the coordinates of the exceptional divisors
+P<T4,T5,T6,T7> := PolynomialRing(F, 4);
+
+// Define the polynomial f, which is the equation of the hypersurface X
+f := T4^2*T5*T6
+     + a1*T4^2*T6^2
+     + T4*T5^2*T7
+     + b1*T4*T5*T6*T7
+     + b2*T4*T6^2*T7
+     + c1*T5^2*T7^2
+     + a2*T5*T6*T7^2
+     + a3*T6^2*T7^2;
+
+//--------------------------------------------------------------
+// Compute the saturation of the ideal <f, T6*T7>
+// with respect to the two codimension-2 components
+// of the irrelevant ideal: <T4,T6> and <T5,T7>
+// and take their intersection
+//--------------------------------------------------------------
+&meet[Saturation(Ideal([f, T6*T7]), m) : m in [T4*T6, T5*T7]];
+
+//--------------------------------------------------------------
+// Repeat the same computation but with the square (T6*T7)^2,
+// corresponding to the second power of the component m1 = T6*T7
+//--------------------------------------------------------------
+&meet[Saturation(Ideal([f, (T6*T7)^2]), m) : m in [T4*T6, T5*T7]];
