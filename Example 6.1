@@ -24,8 +24,8 @@ f := T4^2*T5*T6
 
 //--------------------------------------------------------------
 // Compute the saturation of the ideal <f, T6*T7>
-// with respect to the two codimension-2 components
-// of the irrelevant ideal: <T4,T6> and <T5,T7>
+// with respect to the remaining monomials 
+// of the irrelevant ideal: <T6*T7,T4*T6,T5*T7>
 // and take their intersection
 //--------------------------------------------------------------
 &meet[Saturation(Ideal([f, T6*T7]), m) : m in [T4*T6, T5*T7]];
