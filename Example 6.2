@@ -1,0 +1,22 @@
+//==============================================================
+// Magma code for Example 6.2
+// Flipped 4-fold Z' and hypersurface analysis
+//==============================================================
+
+// Define the field of rational functions with four parameters
+// The parameters a1, a2, a3, b2 are the coefficients of f.
+F<a1,a2,a3,b2> := RationalFunctionField(Rationals(), 4);
+
+// Define a polynomial ring with variables T4, T5, T6, T7
+P<T4,T5,T6,T7> := PolynomialRing(F, 4);
+
+// Hypersurface equation for X' in the ample class 3H - 2E1 - 2E2:
+f := a1*T4*T5 + a2*T4*T6 + b2*T5*T7 + a3*T6*T7;
+
+//--------------------------------------------------------------
+// Compute the saturation of the ideal <f, T4*T5>
+// with respect to the remaining codimension-2 monomials
+// of the irrelevant ideal: T4*T6, T5*T7, T6*T7, and intersect.
+//--------------------------------------------------------------
+m1 := T4*T5;
+I1 := &meet[ Saturation(Ideal([f, m1]), m) : m in [T4*T6, T5*T7, T6*T7] ];
